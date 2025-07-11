@@ -18,7 +18,9 @@ But a key part was missing: the `maven_repo`, which included critical dependenci
 
 ### 🧩 How to build ProtoHax today?
 
-Most of the hard work has already been done for you. I:
+Most of the hard work has already been done for you. 
+
+I:
 - Recovered the `maven_repo`
 - Reconfigured `gradle` to work with **local** dependencies
 
@@ -61,7 +63,9 @@ ProtoHax был легендарным читом для Minecraft, но про�
 
 ### 🧩 Как собрать ProtoHax сегодня?
 
-Все сложные шаги уже сделаны за вас. Я:
+Все сложные шаги уже сделаны за вас. 
+
+Я:
 - Восстановил `maven_repo`.
 - Настроил `gradle` на работу с **локальными** зависимостями.
 
