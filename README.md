@@ -6,42 +6,43 @@
 
 ProtoHax was once a legendary Minecraft cheat, but it was discontinued. Why? Because people started cloning and **selling** it (especially the popular **GodWare** fork), so the original developer shut it down.
 
-However, a better solution would have been to implement a **module system**, allowing external modules to be imported. This way, the developer could sell official modules legally instead of the whole client being cloned and resold.
+A better solution could have been a **module system**, allowing users to import external modules. That way, the developer could legally sell official modules instead of the entire cheat being resold.
 
-After shutdown, two repositories remained:
-- `ProtoHax` — the core library.
-- `ProtoHax-Android` — the Android application that uses the library.
+After shutdown, only two repositories were left:
+- `ProtoHax` — the core library
+- `ProtoHax-Android` — the Android app using the library
 
-But a key part was missing: the `maven_repo`, which included critical dependencies like `libmitm`, `mcauth`, `leveldb`, and more. These were removed due to copyright concerns.
+However, the most important part was removed — the `maven_repo`, which contained essential dependencies like `libmitm`, `mcauth`, `leveldb`, etc. These were removed due to copyright.
 
 ---
 
 ### 🧩 How to build ProtoHax today?
 
-Most of the hard work has already been done for you. 
+Most of the hard work has already been done for you.
 
 I:
-- Recovered the `maven_repo`
-- Reconfigured `gradle` to work with **local** dependencies
+- Recovered the missing `maven_repo`
+- Reconfigured all `gradle` files to use **local** dependencies
 
 #### 🔧 Requirements:
 - Windows PC
-- Android Studio installed
-- This repository and the `maven_repo` archive
+- Android Studio
+- This repository and the included `maven_repo`
 
 #### 📦 Build steps:
 1. Create a working folder with both `ProtoHax` and `ProtoHax-Android`.
-2. In both projects, edit `build.gradle` and point Maven paths to your local repo.
-3. First, build the `ProtoHax` library — you will get a `.jar` and `.pom` file.
-4. Place those files here:  
-   `ProtoHax-Android/maven_repo/dev/sora/relay/ProtoHax/1.4.0/`
-5. Open `ProtoHax-Android` in Android Studio and build it as a normal app.
+2. In both projects, edit the `build.gradle` files to point Maven repositories to local paths.
+3. Build the `ProtoHax` library. You will get a `.jar` file.
+4. Go to: ProtoHax-Android/maven_repo/dev/sora/relay/ProtoHax/1.4.0/protohax-1.4.0.jar
+5. Open this `.jar` archive and **replace the `dev` folder inside it** with the updated one from your compiled `ProtoHax` library.
+6. Save the `.jar` and then open `ProtoHax-Android` in Android Studio.
+7. Build it like a normal application.
 
-Done! If all paths are correct — it should compile successfully.
+✅ If all paths and changes are correct — the app will compile successfully.
 
 ---
 
-📁 **Archive with `maven_repo` and both projects available below**.
+📁 **The full archive is available in the repository files.**
 
 ---
 
@@ -49,38 +50,46 @@ Done! If all paths are correct — it should compile successfully.
 
 ### 📖 История ProtoHax
 
-ProtoHax был легендарным читом для Minecraft, но проект закрылся. Почему? Всё просто: началась массовая продажа копий чита, особенно проекта **GodWare**, и разработчик решил закрыть исходный ProtoHax.
+ProtoHax был легендарным читом для Minecraft, но со временем его закрыли. Почему? Потому что начали появляться копии чита, которые люди начали **продавать** (особенно популярная копия — **GodWare**). Разработчик не выдержал и закрыл проект.
 
-Однако вместо закрытия можно было бы ввести систему **модулей**, которые можно было бы подключать отдельно. Это решило бы проблему — разработчик мог бы легально продавать модули, а не сам чит.
+Лучшим решением было бы реализовать **систему модулей**, чтобы пользователи могли подключать свои модули. Тогда разработчик мог бы продавать официальные модули, не рискуя утратой проекта.
 
 После закрытия остались только два репозитория:
 - `ProtoHax` — библиотека.
-- `ProtoHax-Android` — Android-приложение, использующее эту библиотеку.
+- `ProtoHax-Android` — приложение, использующее эту библиотеку.
 
-Но пропал ключевой компонент — `maven_repo`, содержащий нужные зависимости (`libmitm`, `mcauth`, `leveldb` и др.). Их удалили из-за нарушения авторских прав.
+Но исчез самый важный компонент — `maven_repo`, где были библиотеки `libmitm`, `mcauth`, `leveldb` и другие. Их удалили из-за нарушений авторских прав.
 
 ---
 
 ### 🧩 Как собрать ProtoHax сегодня?
 
-Все сложные шаги уже сделаны за вас. 
+Почти всё уже сделано за вас.
 
 Я:
-- Восстановил `maven_repo`.
-- Настроил `gradle` на работу с **локальными** зависимостями.
+- Восстановил `maven_repo`
+- Настроил все `gradle`-файлы на использование **локальных** зависимостей
 
 #### 🔧 Требования:
 - ПК с Windows
 - Установленная Android Studio
-- Архив с этим репозиторием и `maven_repo`
+- Этот репозиторий и архив с `maven_repo`
 
-#### 📦 Сборка:
-1. Создайте рабочую папку с двумя проектами: `ProtoHax` и `ProtoHax-Android`.
-2. В обоих проектах замените пути в `build.gradle` на локальные.
-3. Сначала соберите `ProtoHax` — вы получите `.jar` и `.pom`.
-4. Поместите эти файлы в:  
-   `ProtoHax-Android/maven_repo/dev/sora/relay/ProtoHax/1.4.0/`
-5. Соберите `ProtoHax-Android` как обычное приложение.
+#### 📦 Шаги сборки:
+1. Создайте рабочую папку и поместите туда два проекта: `ProtoHax` и `ProtoHax-Android`.
+2. В обоих проектах откройте `build.gradle` и укажите путь к локальному `maven_repo`.
+3. Соберите `ProtoHax`. В результате вы получите `.jar` файл.
+4. Перейдите по пути: ProtoHax-Android/maven_repo/dev/sora/relay/ProtoHax/1.4.0/protohax-1.4.0.jar
+5. Откройте этот `.jar` как архив и **замените в нём папку `dev`** на ту, что была скомпилирована в вашем проекте `ProtoHax`.
+6. Сохраните `.jar` и откройте `ProtoHax-Android` в Android Studio.
+7. Соберите как обычное приложение.
 
-Готово! Если всё настроено правильно — сборка пройдёт успешно.
+✅ Если всё сделано правильно — сборка пройдёт успешно.
+
+---
+
+📁 **Полный архив доступен в файлах репозитория.**
+
+
+
 
